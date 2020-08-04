@@ -14,13 +14,17 @@ func Test_cases (t *testing.T) {
     &Test_Case{"brie", Item{"Aged Brie", 2, 2},1,3},
     &Test_Case{"brie q limit", Item{"Aged Brie", 2, 50},1,50},
     &Test_Case{"sulfuras", Item{"Sulfuras, Hand of Ragnaros", 2, 20},2,20},
+    &Test_Case{"sulfuras other", Item{"Sulfuras, Foot of Bifrost Giant", 2, 20},2,20},
     &Test_Case{"backstage",  Item{"Backstage passes to a TAFKAL80ETC concert", 12, 20},11,21},
+    &Test_Case{"backstage other",  Item{"Backstage passes to a BIG concert", 12, 20},11,21},
     &Test_Case{"backstage ten",  Item{"Backstage passes to a TAFKAL80ETC concert", 10, 20},9,22},
     &Test_Case{"backstage five",  Item{"Backstage passes to a TAFKAL80ETC concert", 5, 20},4,23},
     &Test_Case{"backstage zero",  Item{"Backstage passes to a TAFKAL80ETC concert", 0, 20},-1,0},
     &Test_Case{"backstage q limit",  Item{"Backstage passes to a TAFKAL80ETC concert", 11, 50},10,50},
     &Test_Case{"backstage ten q limit",  Item{"Backstage passes to a TAFKAL80ETC concert", 10, 50},9,50},
     &Test_Case{"backstage five q limit",  Item{"Backstage passes to a TAFKAL80ETC concert", 5, 50},4,50},
+    &Test_Case{"conjured",  Item{"Conjured cakes", 5, 10},4,8},
+
   }
 
   for _, tc := range cases {

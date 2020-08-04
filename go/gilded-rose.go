@@ -18,6 +18,8 @@ func UpdateQuality(items []*Item) {
       //noop
       case strings.HasPrefix(item.name, "Backstage passes"):
         update_passes(item)
+      case strings.HasPrefix(item.name, "Conjured"):
+        update_conjured(item)
       default:
         update_item(item)
     }
@@ -25,14 +27,14 @@ func UpdateQuality(items []*Item) {
 }		
 
 func update_brie (item *Item) {
-  item.sellIn = item.sellIn -1
+  item.sellIn = item.sellIn - 1
   if item.quality < 50 {
 		item.quality = item.quality + 1
 	}
 }
 
 func update_passes (item *Item) {
-  item.sellIn = item.sellIn -1
+  item.sellIn = item.sellIn - 1
   switch {
     case item.sellIn > 10:
 		  item.quality = item.quality + 1
@@ -48,7 +50,12 @@ func update_passes (item *Item) {
 	}
 }
 
+func update_conjured (item *Item) {
+  item.sellIn = item.sellIn - 1
+  item.quality = item.quality - 2
+}
+
 func update_item (item *Item) {
-  item.sellIn = item.sellIn -1
+  item.sellIn = item.sellIn - 1
   item.quality = item.quality - 1
 }
