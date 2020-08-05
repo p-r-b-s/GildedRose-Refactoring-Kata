@@ -36,11 +36,11 @@ func update_brie (item *Item) {
 func update_passes (item *Item) {
   item.sellIn = item.sellIn - 1
   switch {
-    case item.sellIn > 10:
+    case item.sellIn >= 10:
 		  item.quality = item.quality + 1
-    case item.sellIn > 5:
+    case item.sellIn >= 5:
 	  	item.quality = item.quality + 2
-    case item.sellIn > 0:
+    case item.sellIn >= 0:
 	  	item.quality = item.quality + 3
     default:
       item.quality = 0
